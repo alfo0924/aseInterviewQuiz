@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日月光面試問題測驗</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>日月光面試問題測驗</h1>
+        <p>測試您對日月光常見面試問題的了解程度</p>
+    </header>
+
+    <div id="score-section" class="hidden">
+        <div class="score-card">
+            <h2>您的測驗結果</h2>
+            <div class="score-display">
+                <span id="score">0</span>/10
+            </div>
+            <div id="score-analysis"></div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <form id="quiz-form">
+            <div class="questions">
+                <!-- 問題 1 -->
+                <div class="question-card" id="q1-container">
+                    <div class="question">
+                        <h3>1. 日月光主要業務是什麼？</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q1-a" name="q1" value="a">
+                                <label for="q1-a">半導體設計</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q1-b" name="q1" value="b">
+                                <label for="q1-b">半導體測試與封裝</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q1-c" name="q1" value="c">
+                                <label for="q1-c">半導體晶圓製造</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q1-d" name="q1" value="d">
+                                <label for="q1-d">電子零件組裝</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q1-feedback"></div>
+                </div>
+
+                <!-- 問題 2 -->
+                <div class="question-card" id="q2-container">
+                    <div class="question">
+                        <h3>2. 日月光的輪班制度是什麼？</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q2-a" name="q2" value="a">
+                                <label for="q2-a">每天固定早班8小時</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q2-b" name="q2" value="b">
+                                <label for="q2-b">三班制，每8小時輪一次</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q2-c" name="q2" value="c">
+                                <label for="q2-c">12小時一班，四班二輪（做2休2）</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q2-d" name="q2" value="d">
+                                <label for="q2-d">彈性工時，無固定班次</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q2-feedback"></div>
+                </div>
+
+                <!-- 問題 3 -->
+                <div class="question-card" id="q3-container">
+                    <div class="question">
+                        <h3>3. 設備工程師的主要工作內容是什麼？</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q3-a" name="q3" value="a">
+                                <label for="q3-a">軟體開發與維護</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q3-b" name="q3" value="b">
+                                <label for="q3-b">半導體機台的維修、維護、保養與故障排除</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q3-c" name="q3" value="c">
+                                <label for="q3-c">產品設計與研發</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q3-d" name="q3" value="d">
+                                <label for="q3-d">市場行銷與客戶開發</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q3-feedback"></div>
+                </div>
+
+                <!-- 問題 4 -->
+                <div class="question-card" id="q4-container">
+                    <div class="question">
+                        <h3>4. 面試時如何回答「為什麼想來日月光應徵？」</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q4-a" name="q4" value="a">
+                                <label for="q4-a">因為薪水比較高</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q4-b" name="q4" value="b">
+                                <label for="q4-b">因為朋友都在這裡工作</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q4-c" name="q4" value="c">
+                                <label for="q4-c">因為日月光是封裝測試大廠，希望能在專業領域發展</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q4-d" name="q4" value="d">
+                                <label for="q4-d">因為離家近，通勤方便</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q4-feedback"></div>
+                </div>
+
+                <!-- 問題 5 -->
+                <div class="question-card" id="q5-container">
+                    <div class="question">
+                        <h3>5. 面試時如何回答「遇到最挫折的事」？</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q5-a" name="q5" value="a">
+                                <label for="q5-a">說自己從未遇過挫折</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q5-b" name="q5" value="b">
+                                <label for="q5-b">描述一個挫折經驗，並說明如何克服及學習</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q5-c" name="q5" value="c">
+                                <label for="q5-c">抱怨前公司的不合理對待</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q5-d" name="q5" value="d">
+                                <label for="q5-d">說自己不喜歡談論負面經驗</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q5-feedback"></div>
+                </div>
+
+                <!-- 問題 6 -->
+                <div class="question-card" id="q6-container">
+                    <div class="question">
+                        <h3>6. 日月光的工作環境特點是什麼？</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q6-a" name="q6" value="a">
+                                <label for="q6-a">開放式辦公室，可自由使用手機</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q6-b" name="q6" value="b">
+                                <label for="q6-b">需穿無塵衣，進公司禁止攜帶智慧型手機</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q6-c" name="q6" value="c">
+                                <label for="q6-c">遠端工作為主，偶爾到辦公室</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q6-d" name="q6" value="d">
+                                <label for="q6-d">戶外工作環境，需經常外出</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q6-feedback"></div>
+                </div>
+
+                <!-- 問題 7 -->
+                <div class="question-card" id="q7-container">
+                    <div class="question">
+                        <h3>7. 自我介紹的最佳時間控制是？</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q7-a" name="q7" value="a">
+                                <label for="q7-a">5-10分鐘詳細介紹</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q7-b" name="q7" value="b">
+                                <label for="q7-b">1-2分鐘，與應徵職位相關</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q7-c" name="q7" value="c">
+                                <label for="q7-c">30秒簡短介紹</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q7-d" name="q7" value="d">
+                                <label for="q7-d">不需自我介紹，直接回答問題</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q7-feedback"></div>
+                </div>
+
+                <!-- 問題 8 -->
+                <div class="question-card" id="q8-container">
+                    <div class="question">
+                        <h3>8. 面試時被問到「你的缺點是什麼」，最好的回答方式是？</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q8-a" name="q8" value="a">
+                                <label for="q8-a">說自己沒有缺點</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q8-b" name="q8" value="b">
+                                <label for="q8-b">說出一個嚴重的缺點</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q8-c" name="q8" value="c">
+                                <label for="q8-c">說出曾有的缺點，並強調如何改善</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q8-d" name="q8" value="d">
+                                <label for="q8-d">將優點包裝成缺點（如：太完美主義）</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q8-feedback"></div>
+                </div>
+
+                <!-- 問題 9 -->
+                <div class="question-card" id="q9-container">
+                    <div class="question">
+                        <h3>9. 日月光的員工福利包括哪些？</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q9-a" name="q9" value="a">
+                                <label for="q9-a">僅有基本勞健保</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q9-b" name="q9" value="b">
+                                <label for="q9-b">年盈餘分紅、三節獎金、健身房、員工餐飲</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q9-c" name="q9" value="c">
+                                <label for="q9-c">無固定福利，視業績而定</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q9-d" name="q9" value="d">
+                                <label for="q9-d">每月免費旅遊</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q9-feedback"></div>
+                </div>
+
+                <!-- 問題 10 -->
+                <div class="question-card" id="q10-container">
+                    <div class="question">
+                        <h3>10. 面試結束時被問「還有什麼問題想問的嗎」，最佳回答是？</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="q10-a" name="q10" value="a">
+                                <label for="q10-a">詢問薪資和休假制度</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q10-b" name="q10" value="b">
+                                <label for="q10-b">詢問工作的詳細目標與責任，或主管對這個職位的期望</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q10-c" name="q10" value="c">
+                                <label for="q10-c">說沒有問題，表示理解所有內容</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="q10-d" name="q10" value="d">
+                                <label for="q10-d">詢問公司的負面新聞</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback hidden" id="q10-feedback"></div>
+                </div>
+            </div>
+
+            <div class="submit-container">
+                <button type="submit" id="submit-btn">提交答案</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
